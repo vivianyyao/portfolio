@@ -1,16 +1,12 @@
+// app/layout.tsx
 import type { Metadata } from "next";
-import { Prata, Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const prata = Prata({
+const inter = Inter({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-prata",
-});
-
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -24,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${prata.variable} ${geist.variable}`}>
-      <body className="min-h-screen antialiased">
+    <html lang="en" className={inter.variable}>
+      <body className={`${inter.className} min-h-screen antialiased`}>
         {children}
       </body>
     </html>

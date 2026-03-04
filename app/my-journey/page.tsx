@@ -154,7 +154,7 @@ export default function MyJourneyPage() {
               </Link>
             </div>
 
-            <nav className="font-serif flex gap-10 text-sm tracking-widest text-white/85">
+            <nav className="font-sans flex gap-10 text-sm tracking-widest text-white/85">
               <Link href="/" className="hover:text-white transition">
                 home
               </Link>

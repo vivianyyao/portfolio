@@ -45,11 +45,11 @@ export default function CaseStudyPage() {
       <div className="mx-auto max-w-[900px] px-10 py-16">
         {/* NAV */}
         <header className="flex items-start justify-between">
-          <div className="font-serif text-base lowercase tracking-wide text-[#2b2118]/80">
+          <div className="font-sans text-base lowercase tracking-wide text-[#2b2118]/80">
             vivian yao
           </div>
 
-          <nav className="font-serif flex gap-10 text-sm tracking-wide text-[#2b2118]/70">
+          <nav className="font-sans flex gap-10 text-sm tracking-wide text-[#2b2118]/70">
             <Link href="/" className="hover:text-[#2b2118] transition">
               home
             </Link>
@@ -74,7 +74,7 @@ export default function CaseStudyPage() {
             ← back
           </Link>
 
-          <h1 className="mt-6 font-serif text-5xl tracking-tight">
+          <h1 className="mt-6 font-sans text-5xl tracking-tight">
             {project.title}
           </h1>
 
@@ -98,7 +98,7 @@ export default function CaseStudyPage() {
           <div className="mt-12 space-y-10">
             {project.sections.map((s, idx) => (
               <section key={idx}>
-                <h2 className="font-serif text-2xl">{s.title}</h2>
+                <h2 className="font-sans text-2xl">{s.title}</h2>
 
                 {s.type === "text" && (
                   <p className="mt-4 text-base leading-relaxed text-[#2b2118]/75">

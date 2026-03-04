@@ -34,11 +34,11 @@ export default function ProjectsPage() {
       <div className="mx-auto max-w-[1200px] px-10 pb-24">
         {/* Nav */}
         <header className="flex items-start justify-between pt-10">
-          <div className="font-serif text-base lowercase tracking-wide text-[#2b2118]/80">
+          <div className="font-sans text-base lowercase tracking-wide text-[#2b2118]/80">
             vivian yao
           </div>
 
-          <nav className="font-serif flex gap-10 text-sm tracking-wide text-[#2b2118]/70">
+          <nav className="font-sans flex gap-10 text-sm tracking-wide text-[#2b2118]/70">
             <Link href="/" className="hover:text-[#2b2118] transition">
               home
             </Link>
@@ -56,7 +56,7 @@ export default function ProjectsPage() {
 
         {/* Title */}
         <section className="mt-24 max-w-2xl">
-          <h1 className="font-serif text-5xl tracking-tight">Projects</h1>
+          <h1 className="font-sans text-5xl tracking-tight">Projects</h1>
           <p className="mt-4 text-lg text-[#2b2118]/70 leading-relaxed">
             Click a card to open a quick preview. Read full for the deep dive.
           </p>
@@ -72,7 +72,7 @@ export default function ProjectsPage() {
               className="text-left rounded-[28px] border border-black/10 bg-white/60 p-8 shadow-sm transition hover:-translate-y-1 hover:bg-white/75 focus:outline-none focus:ring-2 focus:ring-black/20"
             >
               <div className="flex items-start justify-between gap-4">
-                <h2 className="font-serif text-xl">{p.title}</h2>
+                <h2 className="font-sans text-xl">{p.title}</h2>
                 <span className="mt-1 inline-flex items-center rounded-full border border-black/10 bg-white/60 px-3 py-1 text-xs text-[#2b2118]/70">
                   view
                 </span>
@@ -113,7 +113,7 @@ export default function ProjectsPage() {
                 onClick={(e) => e.stopPropagation()}>
               <div className="flex items-start justify-between gap-6 border-b border-black/10 px-7 py-6">
                 <div>
-                  <div className="font-serif text-2xl tracking-tight">
+                  <div className="font-sans text-2xl tracking-tight">
                     {active.title}
                   </div>
                   <div className="mt-1 text-sm text-[#2b2118]/70">
@@ -145,7 +145,7 @@ export default function ProjectsPage() {
                 <div className="mt-8 space-y-8">
                   {(active.previewSections ?? active.sections).map((s, idx) => (
                     <section key={idx}>
-                      <h3 className="font-serif text-xl">{s.title}</h3>
+                      <h3 className="font-sans text-xl">{s.title}</h3>
 
                       {s.type === "text" && (
                         <p className="mt-3 text-sm leading-relaxed text-[#2b2118]/75">
