@@ -175,19 +175,43 @@ export default function ProjectsPage() {
 
                       {s.type === "metrics" && (
                         <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                          {s.items.map((m) => (
-                            <div
-                              key={m.label}
-                              className="rounded-2xl border border-black/10 bg-white/60 px-5 py-4"
-                            >
-                              <div className="text-xs uppercase tracking-wide text-[#2b2118]/50">
-                                {m.label}
+                          {s.items.map((m) =>
+                            m.href ? (
+                              <a
+                                key={m.label}
+                                href={m.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group block rounded-2xl border border-black/10 bg-white/60 px-5 py-4 transition hover:bg-white/80 hover:shadow-md hover:-translate-y-[1px]"
+                              >
+                                <div className="flex items-start justify-between gap-4">
+                                  <div>
+                                    <div className="text-xs uppercase tracking-wide text-[#2b2118]/50">
+                                      {m.label}
+                                    </div>
+                                    <div className="mt-1 text-sm font-medium text-[#2b2118]/80">
+                                      {m.value}
+                                    </div>
+                                  </div>
+                                  <span className="text-[#2b2118]/35 transition group-hover:text-[#2b2118]/55">
+                                    ↗
+                                  </span>
+                                </div>
+                              </a>
+                            ) : (
+                              <div
+                                key={m.label}
+                                className="rounded-2xl border border-black/10 bg-white/60 px-5 py-4"
+                              >
+                                <div className="text-xs uppercase tracking-wide text-[#2b2118]/50">
+                                  {m.label}
+                                </div>
+                                <div className="mt-1 text-sm font-medium text-[#2b2118]/80">
+                                  {m.value}
+                                </div>
                               </div>
-                              <div className="mt-1 text-sm font-medium text-[#2b2118]/80">
-                                {m.value}
-                              </div>
-                            </div>
-                          ))}
+                            )
+                          )}
                         </div>
                       )}
 
