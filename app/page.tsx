@@ -110,37 +110,19 @@ export default function Home() {
             <div className="absolute inset-0 bg-black/35 backdrop-blur-[2px]" />
 
             {/* Panel */}
-            <div
-              className="relative w-full max-w-[980px] overflow-hidden rounded-[40px] border border-white/15 bg-black shadow-[0_40px_120px_rgba(0,0,0,0.55)]"
-              onClick={(e) => e.stopPropagation()} // inside click does NOT close
-            >
-              <div className="relative aspect-[16/10] w-full">
-                <video
-                  className="absolute inset-0 h-full w-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src="/videos/hero.mp4" type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-              </div>
-
-              <div className="flex items-center justify-between px-6 py-5 text-white">
-                <div className="text-sm text-white/80">
-                  hi! (esc to close)
-                </div>
-
-                {/* optional explicit close button */}
-                <button
-                  type="button"
-                  onClick={() => setWaveOpen(false)}
-                  className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90 hover:bg-white/15 transition"
-                >
-                  close
-                </button>
-              </div>
+            <div className="relative w-full max-w-[980px] overflow-hidden rounded-[40px] [clip-path:inset(0_round_40px)] border border-white/15 bg-black shadow-[0_40px_120px_rgba(0,0,0,0.55)]">
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-black [clip-path:inset(0_round_40px)]">
+              <video
+                className="absolute inset-0 h-full w-full object-cover [transform:translateZ(0)]"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/videos/hero.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+            </div>
             </div>
           </div>
         )}
