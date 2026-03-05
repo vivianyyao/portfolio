@@ -57,7 +57,6 @@ export default function Home() {
             <div className="max-w-[680px]">
               <h1 className="text-[clamp(3rem,5vw,4.6rem)] font-medium leading-[1.04] tracking-[-0.02em]">
               hi, i'm vivian.<br></br>
-              i solve messy problems.
               </h1>
 
               <div className="mt-8 text-sm tracking-wide text-[#2b2118]/55">
@@ -88,7 +87,7 @@ export default function Home() {
               <div className="w-full max-w-[560px]">
                 <div className="overflow-hidden rounded-[44px] border border-black/10 bg-white/40 shadow-md hover:-translate-y-1 transition-all duration-300">
                   <img
-                    src="/images/Headshot.JPG"
+                    src="/images/vivian-headshot.jpg"
                     alt="Vivian Yao headshot"
                     className="h-[420px] w-full object-cover sm:h-[520px]"
                   />
@@ -99,20 +98,21 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Wave modal */}
-      {waveOpen && (
-        <div className="fixed inset-0 z-[100]" role="dialog" aria-modal="true">
-          <button
-            type="button"
-            aria-label="Close"
-            onClick={() => setWaveOpen(false)}
-            className="absolute inset-0 bg-black/35 backdrop-blur-[2px]"
-          />
+        {/* Wave modal */}
+        {waveOpen && (
+          <div
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-10"
+            role="dialog"
+            aria-modal="true"
+            onClick={() => setWaveOpen(false)} // outside click closes
+          >
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-black/35 backdrop-blur-[2px]" />
 
-          <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-10">
+            {/* Panel */}
             <div
               className="relative w-full max-w-[980px] overflow-hidden rounded-[40px] border border-white/15 bg-black shadow-[0_40px_120px_rgba(0,0,0,0.55)]"
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()} // inside click does NOT close
             >
               <div className="relative aspect-[16/10] w-full">
                 <video
@@ -129,13 +129,21 @@ export default function Home() {
 
               <div className="flex items-center justify-between px-6 py-5 text-white">
                 <div className="text-sm text-white/80">
-                  hi! (press ESC or click outside to close)
+                  hi! (esc to close)
                 </div>
+
+                {/* optional explicit close button */}
+                <button
+                  type="button"
+                  onClick={() => setWaveOpen(false)}
+                  className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90 hover:bg-white/15 transition"
+                >
+                  close
+                </button>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
     </main>
   );
 }
