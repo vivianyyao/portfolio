@@ -66,7 +66,7 @@ export default function ProjectsPage() {
           <section className="mt-20 max-w-2xl">
             <h1 className="text-5xl tracking-tight">Projects</h1>
             <p className="mt-4 text-lg text-[#2b2118]/70 leading-relaxed">
-              Click a card to open a quick preview. Read full for the deep dive.
+              click for preview, read full for the deep dive
             </p>
           </section>
 
@@ -209,10 +209,6 @@ export default function ProjectsPage() {
                       )}
                     </section>
                   ))}
-                </div>
-
-                <div className="mt-10 text-xs text-[#2b2118]/50">
-                  press esc or click outside to close
                 </div>
               </div>
             </div>
