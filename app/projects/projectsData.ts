@@ -40,22 +40,22 @@ export const projects: Project[] = [
           "If companies start paying for reliability, Bloom’s installed systems could generate long-term recurring revenue. If buyers continue optimizing purely for cost, Bloom remains primarily an equipment supplier."
         ],
       },
-            {
+      {
         type: "metrics",
         title: "Analysis",
         items: [
-            {
+          {
             label: "Model",
             value: "3 scenarios + sensitivities",
             href: "https://docs.google.com/spreadsheets/d/1lMTtfmkzAOEGjGOENvryru4kk0EdF4ptfA9htmZzC_Q/edit?usp=sharing",
-            },
-            {
+          },
+          {
             label: "Memo",
             value: "Thesis + triggers + risks",
             href: "https://docs.google.com/document/d/1H6Mw-zGTAux64LfsWOVjDJP5kCRUeNxsMnskD9Ht2qw/preview",
-            },
+          },
         ],
-        },
+      },
     ],
 
     sections: [
@@ -97,7 +97,7 @@ export const projects: Project[] = [
           },
         ],
       },
-         {
+      {
         type: "text",
         title: "Key insight",
         body: "If electricity procurement remains primarily cost-driven, Bloom likely stays an equipment supplier with cyclical, project-based revenue. If reliability becomes priced (like insurance), the installed base can behave more like infrastructure: recurring cash flows, higher lifetime margins, and improved durability of earnings.",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
         type: "text",
         title: "Model approach",
         body: "I built a simple three-scenario model to explore how Bloom’s future could evolve if electricity reliability becomes more valuable to buyers."
-        },
+      },
       {
         type: "bullets",
         title: "",
@@ -133,7 +133,133 @@ export const projects: Project[] = [
             label: "Investment Memo",
             href: "https://docs.google.com/document/d/1H6Mw-zGTAux64LfsWOVjDJP5kCRUeNxsMnskD9Ht2qw/preview",
           },
-          { label: "Model", href: "https://docs.google.com/spreadsheets/d/1lMTtfmkzAOEGjGOENvryru4kk0EdF4ptfA9htmZzC_Q/edit?usp=sharing" },
+          {
+            label: "Model",
+            href: "https://docs.google.com/spreadsheets/d/1lMTtfmkzAOEGjGOENvryru4kk0EdF4ptfA9htmZzC_Q/edit?usp=sharing"
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "ticker-snapshot",
+    slug: "ticker-snapshot", // URL: /projects/ticker-snapshot
+    title: "Ticker Snapshot",
+    subtitle: "Can public-company research be compressed into a faster, more intuitive first-pass workflow?",
+    tags: ["product", "finance", "engineering"],
+
+    previewSections: [
+      {
+        type: "text",
+        title: "TL;DR",
+        body: "Ticker Snapshot is a lightweight research tool that turns a public ticker into a structured company overview. It pulls live financial data, calculates margins, leverage, and valuation metrics, then layers on bear / base / bull scenario projections to create a faster first-pass investment workflow."
+      },
+      {
+        type: "bullets",
+        title: "Key Points",
+        items: [
+          "Built to reduce the friction of going from ticker to initial view on a business.",
+          "Combines live market data with derived financial metrics like gross margin, FCF margin, leverage, and valuation.",
+          "Generates bear, base, and bull five-year scenarios with both a chart view and projection table.",
+          "Exports a clean memo PDF so the analysis can be shared as a self-contained document rather than a screenshot of the app."
+        ],
+      },
+      {
+        type: "metrics",
+        title: "Build",
+        items: [
+          {
+            label: "Live app",
+            value: "View deployed product",
+            href: "https://ticker-snapshot.vercel.app/",
+          },
+          {
+            label: "Source",
+            value: "React + TypeScript + APIs",
+            href: "https://github.com/vivianyyao/ticker-snapshot",
+          },
+        ],
+      },
+    ],
+
+    sections: [
+      {
+        type: "text",
+        title: "TL;DR",
+        body: "I built Ticker Snapshot to replicate the earliest stage of analyst workflow in a lighter, faster interface. Instead of opening multiple tabs for profile data, statements, ratios, and scenario work, the tool assembles a company snapshot, derives key metrics, and frames possible outcomes in one place."
+      },
+      {
+        type: "bullets",
+        title: "What it does",
+        items: [
+          "Pulls live company profile, quote, income statement, cash flow statement, and balance sheet data through the Financial Modeling Prep API.",
+          "Computes core operating and valuation metrics including revenue growth, gross margin, operating margin, free cash flow margin, net debt, and EV / EBITDA.",
+          "Models five-year Bear, Base, and Bull scenarios with a projection table and overlaid line chart.",
+          "Exports a formatted PDF memo so the output can be reviewed or shared outside the product."
+        ],
+      },
+      {
+        type: "metrics",
+        title: "Key Decisions",
+        items: [
+          {
+            label: "Why build this?",
+            value:
+              "To make company research feel less fragmented and more decision-oriented.",
+          },
+          {
+            label: "What is differentiated?",
+            value:
+              "The tool does not just display raw data. It translates filings and quote data into an interpretable first-pass view with scenario framing.",
+          },
+          {
+            label: "What was optimized for?",
+            value:
+              "Speed, clarity, and a workflow that feels useful to an operator, investor, or strategist rather than only a technical user.",
+          },
+          {
+            label: "Where does the value come from?",
+            value:
+              "Reducing the time it takes to move from curiosity about a ticker to a structured opinion about the business.",
+          },
+        ],
+      },
+      {
+        type: "text",
+        title: "Product approach",
+        body: "The app was intentionally scoped as a v1: one search, one company snapshot, one opinionated layout. I used live APIs for flexibility, computed fallbacks for valuation metrics when upstream fields were missing, and kept the interface deliberately minimal so the analysis stayed legible."
+      },
+      {
+        type: "bullets",
+        title: "What I learned",
+        items: [
+          "Shipping financial tools is as much about handling incomplete or inconsistent data as it is about UI.",
+          "Small layout choices materially affect whether a dashboard feels analytical or noisy.",
+          "A simple scenario engine can make static market data feel much more decision-useful."
+        ],
+      },
+      {
+        type: "bullets",
+        title: "Next steps",
+        items: [
+          "Add more robust valuation and capital allocation metrics.",
+          "Expand memo generation so exported output feels closer to a true first-draft investment note.",
+          "Support installable app behavior and a more app-like experience through PWA or native wrapping."
+        ],
+      },
+      {
+        type: "links",
+        title: "Project links",
+        items: [
+          {
+            label: "Live app",
+            href: "https://ticker-snapshot.vercel.app/",
+          },
+          {
+            label: "GitHub repository",
+            href: "https://github.com/vivianyyao/ticker-snapshot",
+          },
         ],
       },
     ],
